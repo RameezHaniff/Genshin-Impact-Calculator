@@ -1,0 +1,376 @@
+
+<mat-tab-group class ="tabs" dynamicHeight="true" mat-align-tabs="center" animationDuration="200ms" (selectedTabChange)="elementCheck($event); calculateStuff($event); GenerateCards($event)">
+    <mat-tab label="Stat Page">
+        <form novalidate class="statForm" (ngSubmit)="onSubmit(charForm, enemyForm)" #charForm="ngForm" >
+        <div>
+        <h2>Character Main Stats</h2>
+        <label>
+            <span>Total Hp</span>
+            <input type="number" name="totalHp" [ngModel]="charEntryData.totalHp">
+        </label>
+        <br>
+        <label>
+            <span>Total Attack</span>
+            <input type="number" name="totalAttack" [ngModel]="charEntryData.totalAttack">
+        </label>
+        <br>
+        <label>
+            <span>Base Attack</span>
+            <input type="number" name="baseAttack" [ngModel]="charEntryData.baseAttack">
+        </label>
+        <br>
+    
+        <label>
+            <span>Total Defense</span>
+            <input type="number" name="totalDefense" [ngModel]="charEntryData.totalDefense">
+        </label>
+        <br>
+    
+        <label>
+            <span>Crit Rate</span>
+            <input type="number" name="critRate" [ngModel]="charEntryData.critRate">
+        </label>
+        <br>
+    
+        <label>
+            <span>Crit Damage</span>
+            <input type="number" name="critDamage" [ngModel]="charEntryData.critDamage">
+        </label>
+        <br>
+    
+        <label>
+            <span>Energy Recharge</span>
+            <input type="number" name="energyRecharge" [ngModel]="charEntryData.energyRecharge">
+        </label>
+        <br>
+    
+        <label>
+            <span>Healing Bonus</span>
+            <input type="number" name="healingBonus" [ngModel]="charEntryData.healingBonus">
+        </label>
+        <br>
+    
+        <label>
+            <span>Character Level</span>
+            <input type="number" name="characterLevel" [ngModel]="charEntryData.characterLevel">
+        </label>
+        <br>
+        </div>
+    
+        <div ngModelGroup="extraStats">
+        <h2>Other Stats</h2>
+        <label>
+            <span>Physical Damage Bonus</span>
+            <input type="number" name="physicalDmgBonus" [ngModel]="charEntryData.extraStats.physicalDmgBonus">
+        </label>
+        <br>
+    
+        <label>
+            <span>Physical Damage Resist</span>
+            <input type="number" name="physicalDmgRes" [ngModel]="charEntryData.extraStats.physicalDmgRes">
+        </label>
+        <br>
+    
+        <label>
+            <span>Anemo Damage Bonus</span>
+            <input type="number" name="anemoDmgBonus" [ngModel]="charEntryData.extraStats.anemoDmgBonus">
+        </label>
+        <br>
+
+        <label>
+            <span>Anemo Damage Resist</span>
+            <input type="number" name="physicalDmgRes" [ngModel]="charEntryData.extraStats.physicalDmgBonus">
+        </label>
+        <br>
+    
+        <label>
+            <span>Geo Damage Bonus</span>
+            <input type="number" name="geoDmgBonus" [ngModel]="charEntryData.extraStats.geoDmgBonus">
+        </label>
+        <br>
+    
+        <label>
+            <span>Geo Damage Resist</span>
+            <input type="number" name="geoDmgRes" [ngModel]="charEntryData.extraStats.geoDmgRes">
+        </label>
+        <br>
+    
+        <label>
+            <span>Electro Damage Bonus</span>
+            <input type="number" name="electroDmgBonus" [ngModel]="charEntryData.extraStats.electroDmgBonus">
+        </label>
+        <br>
+    
+        <label>
+            <span>Electro Damage Resist</span>
+            <input type="number" name="electroDmgRes" [ngModel]="charEntryData.extraStats.electroDmgRes">
+        </label>
+        <br>
+        <label>
+            <span>Hydro Damage Bonus</span>
+            <input type="number" name="hydroDmgBonus" [ngModel]="charEntryData.extraStats.hydroDmgBonus">
+        </label>
+        <br>
+    
+        <label>
+            <span>Hydro Damage Resist</span>
+            <input type="number" name="hydroDmgRes" [ngModel]="charEntryData.extraStats.hydroDmgRes">
+        </label>
+        <br>
+    
+        <label>
+            <span>Pyro Damage Bonus</span>
+            <input type="number" name="pyroDmgBonus" [ngModel]="charEntryData.extraStats.pyroDmgBonus">
+        </label>
+        <br>
+    
+        <label>
+            <span>Pyro Damage Resist</span>
+            <input type="number" name="pyroDmgRes" [ngModel]="charEntryData.extraStats.pyroDmgRes">
+        </label>
+        <br>
+        <label>
+            <span>Cryo Damage Bonus</span>
+            <input type="number" name="cryoDmgBonus" [ngModel]="charEntryData.extraStats.cryoDmgBonus">
+        </label>
+        <br>
+        <label>
+            <span>Cryo Damage Resist</span>
+            <input type="number" name="cryoDmgRes" [ngModel]="charEntryData.extraStats.cryoDmgRes">
+        </label>
+        <br>
+        <label>
+            <span>Resistance Shred</span>
+            <input type="number" name="resistanceShred" [ngModel]="charEntryData.extraStats.resistanceShred">
+        </label>
+        <br>
+        <label>
+            <span>Stamina</span>
+            <input type="number" name="stamina" [ngModel]="charEntryData.extraStats.stamina">
+        </label>
+        <br>
+    
+        <label>
+            <span>Incoming Healing Bonus</span>
+            <input type="number" name="incomingHealingBonus" [ngModel]="charEntryData.extraStats.incomingHealingBonus">
+        </label>
+        <br>
+    
+        <label>
+            <span>Shield Strength</span>
+            <input type="number" name="shieldStrength" [ngModel]="charEntryData.extraStats.shieldStrength">
+        </label>
+        <br>
+    
+        <label>
+            <span>Cooldown Reduction</span>
+            <input type="number" name="cdReduction" [ngModel]="charEntryData.extraStats.cdReduction">
+        </label>
+        <br>
+        </div>
+    
+        <div ngModelGroup="otherDmgBonus">
+            <h2>Extra Damage Bonuses</h2>
+            <label>
+                <span>Normal Attack Damage Bonus</span>
+                <input type="number" name="normalAttackDmgBonus" [ngModel]="charEntryData.otherDmgBonus.normalAttackDmgBonus">
+            </label>
+            <br>
+    
+            <label>
+                <span>Normal Attack Crit Rate Bonus</span>
+                <input type="number" name="normalAttackCritRateBonus" [ngModel]="charEntryData.otherDmgBonus.normalAttackCritRateBonus">
+            </label>
+            <br>
+    
+            <label>
+                <span>Charged Attack Damage Bonus</span>
+                <input type="number" name="chargedAttackDmgBonus" [ngModel]="charEntryData.otherDmgBonus.chargedAttackDmgBonus">
+            </label>
+            <br>
+    
+            <label>
+                <span>Charged Attack Crit Rate Bonus</span>
+                <input type="number" name="chargedAttackCritRateBonus" [ngModel]="charEntryData.otherDmgBonus.chargedAttackCritRateBonus">
+            </label>
+            <br>
+            <label>
+                <span>Plunge Attack Damage Bonus</span>
+                <input type="number" name="plungeAttackDmgBonus" [ngModel]="charEntryData.otherDmgBonus.plungeAttackDmgBonus">
+            </label>
+            <br>
+            <label>
+                <span>Plunge Attack Crit Rate Bonus</span>
+                <input type="number" name="plungeAttackCritRateBonus" [ngModel]="charEntryData.otherDmgBonus.plungeAttackCritRateBonus">
+            </label>
+            <br>
+    
+            <label>
+                <span>Elemental Skill Damage Bonus</span>
+                <input type="number" name="elementalSkillDmgBonus" [ngModel]="charEntryData.otherDmgBonus.elementalSkillDmgBonus">
+            </label>
+            <br>
+    
+            <label>
+                <span>Elemental Skill Crit Rate Bonus</span>
+                <input type="number" name="elementalSkillCritRateBonus" [ngModel]="charEntryData.otherDmgBonus.elementalSkillCritRateBonus">
+            </label>
+            <br>
+            <label>
+                <span>Elemental Burst Damage Bonus</span>
+                <input type="number" name="elementalBurstDmgBonus" [ngModel]="charEntryData.otherDmgBonus.elementalBurstDmgBonus">
+            </label>
+            <br>
+            <label>
+                <span>Elemental Burst Crit Rate Bonus</span>
+                <input type="number" name="elementalBurstCritRateBonus" [ngModel]="charEntryData.otherDmgBonus.elementalBurstCritRateBonus">
+            </label>
+            <br>
+            <label>
+                <span>All Damage Bonus</span>
+                <input type="number" name="allDmgBonus" [ngModel]="charEntryData.otherDmgBonus.allDmgBonus">
+            </label>
+            <br>
+    
+            <label>
+                <span>Reaction Damage Bonus</span>
+                <input type="number" name="reactionDamageBonus" [ngModel]="charEntryData.otherDmgBonus.reactionDamageBonus">
+            </label>
+            <br>
+    
+            <label>
+                <span>Movement Speed Bonus</span>
+                <input type="number" name="movementSpeedBonus" [ngModel]="charEntryData.otherDmgBonus.movementSpeedBonus">
+            </label>
+            <br>
+    
+            <label>
+                <span>Attack Speed Bonus</span>
+                <input type="number" name="attackSpeedBonus" [ngModel]="charEntryData.otherDmgBonus.attackSpeedBonus">
+            </label>
+            <br>
+    
+            <label>
+                <span>Weakspot Damage Bonus</span>
+                <input type="number" name="weakspotDmgBonus" [ngModel]="charEntryData.otherDmgBonus.weakspotDmgBonus">
+            </label>
+            <br>
+        </div>
+    
+    <form novalidate #enemyForm="ngForm">
+        <div class="enemyStats">
+            <h2>Enemy Stats</h2>
+    
+            <label>
+                <span>Enemy Level</span>
+                <input type="number" name="enemyLevel" [ngModel]="enemyData.enemyLevel">
+            </label>
+            <br>
+    
+            <label>
+                <span>Enemy Physical Damage Resist</span>
+                <input type="number" name="enemyPhysicalDmgRes" [ngModel]="enemyData.enemyPhysicalDmgRes">
+            </label>
+            <br>
+    
+            <label>
+                <span>Enemy Anemo Damage Resist</span>
+                <input type="number" name="enemyAnemoDmgRes" [ngModel]="enemyData.enemyAnemoDmgRes">
+            </label>
+            <br>
+    
+            <label>
+                <span>Enemy Geo Damage Resist</span>
+                <input type="number" name="enemyGeoDmgRes" [ngModel]="enemyData.enemyGeoDmgRes">
+            </label>
+            <br>
+    
+            <label>
+                <span>Enemy Electro Damage Resist</span>
+                <input type="number" name="enemyElectroDmgRes" [ngModel]="enemyData.enemyElectroDmgRes">
+            </label>
+            <br>
+    
+            <label>
+                <span>Enemy Hydro Damage Resist</span>
+                <input type="number" name="enemyHydroDmgRes" [ngModel]="enemyData.enemyHydroDmgRes">
+            </label>
+            <br>
+    
+            <label>
+                <span>Enemy Pyro Damage Resist</span>
+                <input type="number" name="enemyPyroDmgRes" [ngModel]="enemyData.enemyPyroDmgRes">
+            </label>
+            <br>
+    
+            <label>
+                <span>Enemy Cryo Damage Resist</span>
+                <input type="number" name="enemyCryoDmgRes" [ngModel]="enemyData.enemyCryoDmgRes">
+            </label>
+            <br>
+    
+            <label>
+                <span>Enemy Defense Reduction</span>
+                <input type="number" name="enemyDefReduction" [ngModel]="enemyData.enemyDefReduction">
+            </label>
+            <br>
+        </div>
+    
+            <div class = "ngModelGroup">
+            <span>Normal Attack Level</span>
+            <select #level (change)="updateNormalAttack($event)">
+                <option value="default">-</option>
+                <option *ngFor="let level of levels" [value]="level">
+                    {{level}}
+                </option>
+            </select>
+            </div>
+    
+            <div class = "ngModelGroup">
+                <span>Elemental Skill Level</span>
+                <select #level (change)="updateElementalSkill($event)">
+                    <option value="default">-</option>
+                    <option *ngFor="let level of levels" [value]="level">
+                        {{level}}
+                    </option>
+                </select>
+                </div>
+    
+                <div class = "ngModelGroup">
+                    <span>Elemental Burst Level</span>
+                    <select #level (change)="updateElementalBurst($event)">
+                        <option value="default">-</option>
+                        <option *ngFor="let level of levels" [value]="level">
+                            {{level}}
+                        </option>
+                    </select>
+                    </div>
+    </form>     
+        <span><button type="submit" (click)="sendData();">Submit</button></span>
+    </form>
+</mat-tab>
+<mat-tab label= "Talents">
+
+    <mat-button-toggle-group name="reaction">
+      <mat-button-toggle value="none">None</mat-button-toggle>
+      <mat-button-toggle *ngIf="elementFlag === 'Pyro'" value="vaporize">Vaporize</mat-button-toggle>
+      <mat-button-toggle *ngIf="elementFlag === 'Hydro'" value="revvaporize">Reverse Vaporize</mat-button-toggle>
+      <mat-button-toggle *ngIf="elementFlag === 'Pyro'" value="melt">Melt</mat-button-toggle>
+      <mat-button-toggle *ngIf="elementFlag === 'Cryo'" value="revmelt">Reverse Melt</mat-button-toggle>   
+    </mat-button-toggle-group>
+    <br>
+
+    <div class="transformative">
+        <mat-card id="overload" *ngIf="elementFlag === 'Pyro'|| elementFlag ==='Electro'" value="overload">Overload</mat-card>
+        <mat-card id="shatter" value="shatter">Shatter</mat-card>
+        <mat-card id="electroCharged" *ngIf="elementFlag === 'Hydro' || elementFlag ==='Electro'" value="electrocharged">Electro-Charged</mat-card>
+        <mat-card id="swirl" *ngIf="elementFlag === 'Anemo'" value="swirl">Swirl</mat-card>
+        <mat-card id="superconduct" *ngIf="elementFlag === 'Cryo'|| elementFlag ==='Electro'" value="superconduct">Superconduct</mat-card>
+        <mat-card id="crystallize" *ngIf="elementFlag === 'Geo'" value="crystallize">Crystallize</mat-card>   
+    </div>
+    <br>   
+<span>
+    <app-result-display [damage] = "damage" [ability] = "ability"></app-result-display>
+</span>
+</mat-tab>
+</mat-tab-group>

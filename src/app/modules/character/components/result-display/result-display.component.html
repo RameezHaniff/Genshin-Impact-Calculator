@@ -1,0 +1,8 @@
+
+<mat-card *ngFor="let ability of ability" class="damage">
+    <mat-card-header>{{ability.abilityName}}</mat-card-header>
+</mat-card>
+
+<label for="Text">Average Damage</label>
+<textarea id="Text" rows= "1" col="10" value= {{damage.average_damage}} readonly  ></textarea>
+<br>
