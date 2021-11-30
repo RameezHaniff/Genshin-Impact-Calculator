@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CharacterEntryData } from '../../models/character-data-entry.model';
 import { CharacterDataRequest } from '../../models/character-data-request.model';
 import { EnemyData } from '../../models/enemy-data-entry.model';
 import { Ability, CharacterResponse } from 'src/app/modules/character/models/character-data-response.model';
-import { ThrowStmt } from '@angular/compiler';
 import { DamageResponse } from '../../models/damage-response';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { SkillDamageArray } from '../../models/skill-damage-array.model';
 import {CharacterState} from 'src/app/modules/character/state/character.state';
-import {GetCharacter} from 'src/app/modules/character/actions/character.actions'
+import {GetCharacter, GetCharacterInfo} from 'src/app/modules/character/actions/character.actions'
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
+import { CharacterInfo } from '../../models/character-data.model';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -22,13 +23,22 @@ import { first } from 'rxjs/operators';
 })
 export class AttributeEntryComponent implements OnInit {
 
+  @Input() charId : number = 0;
   @Select(CharacterState.GetCharacter) character$: Observable<CharacterResponse> | undefined;
-    constructor(private _store : Store) { 
-  }
+  @Select(CharacterState.GetCharacterInfo) charInfo$: Observable<CharacterInfo> | undefined;
+
+    constructor(
+      private _store : Store,     
+      private route: ActivatedRoute,
+      private router: Router
+      ) { }
   
 
   ngOnInit(): void {
-
+      this.route.params.subscribe(params => {
+      this.charId = params['id'];
+    });
+      this._store.dispatch(new GetCharacterInfo(this.charId))
   }
 
 damage : DamageResponse = new DamageResponse;
@@ -104,7 +114,7 @@ enemyData : EnemyData = {
 };
 
 charRequest : CharacterDataRequest = {
-  characterID: 1,
+  characterID: this.charId,
   normalAttackLevel: 0,
   elementalSkillLevel: 0,
   elementalBurstLevel: 0
@@ -131,9 +141,11 @@ charRequest : CharacterDataRequest = {
     this.charEntryData = charForm.value;   
   }
 
-  sendData(){
+  SendData(){
+    this.charRequest.characterID = this.charId;
     this._store.dispatch(new GetCharacter(this.charRequest))
   }
+
   
 ability: Ability[] = [];
 execute = false;
@@ -166,7 +178,8 @@ execute = false;
     
     const tab = event.tab.textLabel;   
       if (tab ==="Talents") {
-        this.character$?.pipe(first()).subscribe(character => { this.elementFlag = character.characterData.characterElement})
+        this.charInfo$?.pipe(first()).subscribe(character => { this.elementFlag = character.characterElement})
+        console.log(this.elementFlag)
     }
   }
 
@@ -279,7 +292,7 @@ execute = false;
             else{
               this.skillDamage.elementalBurst.push(this.damage.average_damage = ((attack)*(1 + bonus)*(ability)*(1 + (crtrate * crtdmg))*(((charlvl + 100))/((100 + charlvl) + (100 + enmlvl)*(1- defred))) *resmult))
             }
-          }  
+          }
         
         }
        }) 

@@ -3,15 +3,17 @@ import { Injectable} from '@angular/core';
 import { map, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import {CharacterGatewayService} from 'src/app/modules/character/gateways/character.gateway.service';
-import {GetCharacter, GetCharacterError, GetCharacterSuccess } from 'src/app/modules/character/actions/character.actions';
+import {GetCharacter, GetCharacterError, GetCharacterInfo, GetCharacterInfoError, GetCharacterInfoSuccess, GetCharacterSuccess } from 'src/app/modules/character/actions/character.actions';
 import { CharacterResponse } from '../models/character-data-response.model';
+import { CharacterInfo } from '../models/character-data.model';
 
 export class CharacterModel {
 
     characters : CharacterResponse| null = null;
+    charInfo : CharacterInfo | null = null;
 }
 
-@State<CharacterModel>({name: 'charcter',defaults: {characters: null}})
+@State<CharacterModel>({name: 'charcter',defaults: {characters: null , charInfo: null}})
 
 @Injectable()
 export class CharacterState{
@@ -20,6 +22,11 @@ export class CharacterState{
   @Selector()
   static GetCharacter(state: CharacterModel): CharacterResponse| null{
     return state.characters
+  }
+
+  @Selector()
+  static GetCharacterInfo(state: CharacterModel): CharacterInfo| null{
+    return state.charInfo
   }
 
   @Action(GetCharacter)
@@ -45,6 +52,31 @@ export class CharacterState{
     @Action(GetCharacterError)
     GetCharacterError({ patchState }: StateContext<CharacterModel>,{ payload }: GetCharacterError) {
       patchState({ characters: null });
+    }
+
+    @Action(GetCharacterInfo)
+    GetCharactersInfo({ dispatch}: StateContext<CharacterModel>, {payload}: GetCharacterInfo) {
+
+      return this._characterGateway.GetCharacter(payload).pipe(
+        map((res) => {
+          dispatch(new GetCharacterInfoSuccess(res));
+        }),
+        catchError(error =>
+          of(
+            dispatch(new GetCharacterInfoError(error))
+          )
+        )
+      );
+    }
+
+    @Action(GetCharacterInfoSuccess)
+    GetCharacterInfoSuccess({ patchState }: StateContext<CharacterModel>, { payload }: GetCharacterInfoSuccess) {
+      patchState({ charInfo: payload });
+    }
+
+    @Action(GetCharacterInfoError)
+    GetCharacterInfoError({ patchState }: StateContext<CharacterModel>,{ payload }: GetCharacterInfoError) {
+      patchState({ charInfo: null });
     }
 }
 

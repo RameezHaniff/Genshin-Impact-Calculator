@@ -3,6 +3,7 @@ import {Observable, observable} from 'rxjs'
 import {HttpClient} from '@angular/common/http'
 import { CharacterDataRequest } from '../models/character-data-request.model'
 import { CharacterResponse } from '../models/character-data-response.model'
+import { CharacterInfo } from '../models/character-data.model'
 
 @Injectable({
     providedIn: 'root'
@@ -19,5 +20,9 @@ export class CharacterGatewayService{
 
     GetCharacterData( charRequest: CharacterDataRequest): Observable<CharacterResponse>{
         return this.http.post<CharacterResponse>(this.baseURL, charRequest)
+    };
+
+    GetCharacter(charId : number ): Observable<CharacterInfo>{
+        return this.http.get<CharacterInfo>(`${this.baseURL}/${+charId}`)
     };
 }

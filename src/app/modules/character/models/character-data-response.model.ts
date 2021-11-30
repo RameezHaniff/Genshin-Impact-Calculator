@@ -1,7 +1,5 @@
 
 export interface CharacterResponse{
-        
-        characterData: CharacterInfo;
 
         skills: Skills[];
     }
@@ -38,15 +36,4 @@ export  interface Ability{
         mainSkillDamage: number;
 
         subSkillDamage: number;
-    }
-
-    interface CharacterInfo{
-
-        characterName : string;
-
-        characterRarity: string;
-
-        characterWeapon : string;
-
-        characterElement : string;
     }
