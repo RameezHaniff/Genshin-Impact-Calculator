@@ -165,7 +165,6 @@ execute = false;
         this.execute = true;
       }
     }
-    console.log(this.ability)
     
   }
 
@@ -179,7 +178,6 @@ execute = false;
     const tab = event.tab.textLabel;   
       if (tab ==="Talents") {
         this.charInfo$?.pipe(first()).subscribe(character => { this.elementFlag = character.characterElement})
-        console.log(this.elementFlag)
     }
   }
 
