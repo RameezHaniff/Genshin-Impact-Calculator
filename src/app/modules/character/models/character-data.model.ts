@@ -1,22 +1,10 @@
-export interface CharacterData{
-    characterName : string;
-    characterId : number;
-    rarity : Rarity;
-    weaponType : WeaponType;
-    element: Element;
-}
+export interface CharacterInfo{
 
-interface Rarity{
-    rarityName: string;
-    rarityId: number;
-}
+        characterName : string;
 
-interface WeaponType{
-    weaponTypeId : number;
-    weaponTypeName : string;
-}
+        characterRarity: string;
 
-interface Element{
-    elementId : number;
-    elementName : string;
-}
+        characterWeapon : string;
+
+        characterElement : string;
+    }

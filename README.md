@@ -1,1 +1,1 @@
-Work in progress.
+GetCharacter restructure.

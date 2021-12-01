@@ -6,7 +6,7 @@ import { SimpleCalcComponent } from './modules/temp-module/components/simple-cal
 
 const routes: Routes = [
   {path: 'homepage', component: HomepageComponent},
-  {path : 'calculator', component: AttributeEntryComponent},
+  {path : 'calculator/:id', component: AttributeEntryComponent},
   { path: '',   redirectTo: '/homepage', pathMatch: 'full' }
 ];
 

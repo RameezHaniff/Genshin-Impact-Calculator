@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import { CharacterData } from "./character-data.model";
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({

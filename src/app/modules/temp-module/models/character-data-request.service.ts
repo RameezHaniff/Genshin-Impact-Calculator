@@ -1,9 +1,9 @@
 import { Injectable, ViewChild } from "@angular/core";
 import { CharacterDataRequest } from "src/app/modules/character/models/character-data-request.model";
 import {HttpClient} from "@angular/common/http";
-import { AttributeEntryComponent } from "../components/attribute-entry/attribute-entry.component";
+import { AttributeEntryComponent } from "../../character/components/attribute-entry/attribute-entry.component";
 import { Observable } from "rxjs";
-import { CharacterResponse } from "./character-data-response.model";
+import { CharacterResponse } from "../../character/models/character-data-response.model";
 
 @Injectable({
     providedIn: 'root'

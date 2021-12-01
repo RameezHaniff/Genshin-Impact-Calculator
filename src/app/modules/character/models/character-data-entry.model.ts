@@ -15,21 +15,6 @@ export interface CharacterEntryData{
     otherDmgBonus: OtherDmgBonus;
     characterLevel: number;
 
-    // constructor(){
-    //     this.totalHp = 0;
-    //     this.totalAttack = 0;
-    //     this.baseAttack = 0;
-    //     this.totalDefense = 0;
-    //     this.critRate = 0;
-    //     this.critDamage = 0;
-    //     this.energyRecharge = 0;
-    //     this.healingBonus = 0;
-    //     this.characterLevel = 0;
-    //     extraStats: ExtraStats;
-    //     otherDmgBonus: OtherDmgBonus;
-    //     skillLevel : SkillLevel;
-    //     characterLevel: number;
-    // }
 }
 
 interface ExtraStats{
@@ -54,24 +39,7 @@ interface ExtraStats{
     shieldStrength: number;
     cdReduction: number;
 
-    // constructor(){
-    //     this.physicalDmgBonus = 0;
-    //     this.physicalDmgRes = 0;
-    //     this.anemoDmgBonus = 0;
-    //     this.anemoDmgRes = 0;
-    //     this.electroDmgBonus = 0;
-    //     this.electroDmgRes = 0;
-    //     this.hydroDmgBonus = 0;
-    //     this.hydroDmgRes = 0;
-    //     this.pyroDmgRes = 0;
-    //     this.pyroDmgBonus = 0;
-    //     this.cryoDmgBonus = 0;
-    //     this.cryoDmgRes = 0;
-    //     this.stamina = 100;
-    //     this.incomingHealingBonus = 0;
-    //     this.shieldStrength = 0;
-    //     this.cdReduction = 0;
-    // }
+
 }
 
 interface OtherDmgBonus{
