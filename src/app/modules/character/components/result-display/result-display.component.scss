@@ -1,0 +1,65 @@
+
+html *
+{
+   font-size: 1em !important;
+   color: #000 !important;
+   font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}
+
+.ability1{
+    text-align: center;
+}
+
+.ability2{
+    text-align: center;
+}
+
+.ability3{
+    text-align: center;
+}
+
+.label{
+        display: block;
+        margin-block-start: 2.33em;
+        margin-block-end: 2.33em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+}
+
+.selector{
+
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    color: rgb(255, 255, 255);
+    // background-color: rgb(30, 120, 200);
+    // box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px, rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px;
+    width: 100%;
+  }
+  
+  ng-select {
+    width: 200px;
+  }
+
+
+.ability1{
+    max-width: 30%;
+    float: left;
+}
+
+.ability2{
+    max-width: 30%;
+    float: left;
+}
+
+.ability3{
+    max-width: 30%;
+    float: left;
+}

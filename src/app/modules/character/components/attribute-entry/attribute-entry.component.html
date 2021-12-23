@@ -1,5 +1,6 @@
 
-<mat-tab-group class ="tabs" dynamicHeight="true" mat-align-tabs="center" animationDuration="200ms" (selectedTabChange)="elementCheck($event); calculateStuff($event); GenerateCards($event)">
+<mat-tab-group class ="tabs" dynamicHeight="true" mat-align-tabs="center" animationDuration="200ms" (selectedTabChange)="onSubmit(charForm, enemyForm)">
+    <!-- "(selectedTabChange)="calculateStuff($event)" -->
     <mat-tab label="Stat Page">
         <form novalidate class="statForm" (ngSubmit)="onSubmit(charForm, enemyForm)" #charForm="ngForm" >
         <div>
@@ -23,6 +24,12 @@
         <label>
             <span>Total Defense</span>
             <input type="number" name="totalDefense" [ngModel]="charEntryData.totalDefense">
+        </label>
+        <br>
+
+        <label>
+            <span>Elemental Mastery</span>
+            <input type="number" name="elementalMastery" [ngModel]="charEntryData.elementalMastery">
         </label>
         <br>
     
@@ -49,7 +56,7 @@
             <input type="number" name="healingBonus" [ngModel]="charEntryData.healingBonus">
         </label>
         <br>
-    
+
         <label>
             <span>Character Level</span>
             <input type="number" name="characterLevel" [ngModel]="charEntryData.characterLevel">
@@ -145,6 +152,11 @@
         </label>
         <br>
         <label>
+            <span>Reaction Damage Bonus</span>
+            <input type="number" name="reactionDamageBonus" [ngModel]="charEntryData.extraStats.reactionDamageBonus">
+        </label>
+        <br>
+        <label>
             <span>Stamina</span>
             <input type="number" name="stamina" [ngModel]="charEntryData.extraStats.stamina">
         </label>
@@ -233,12 +245,6 @@
             <br>
     
             <label>
-                <span>Reaction Damage Bonus</span>
-                <input type="number" name="reactionDamageBonus" [ngModel]="charEntryData.otherDmgBonus.reactionDamageBonus">
-            </label>
-            <br>
-    
-            <label>
                 <span>Movement Speed Bonus</span>
                 <input type="number" name="movementSpeedBonus" [ngModel]="charEntryData.otherDmgBonus.movementSpeedBonus">
             </label>
@@ -315,62 +321,13 @@
             </label>
             <br>
         </div>
-    
-            <div class = "ngModelGroup">
-            <span>Normal Attack Level</span>
-            <select #level (change)="updateNormalAttack($event)">
-                <option value="default">-</option>
-                <option *ngFor="let level of levels" [value]="level">
-                    {{level}}
-                </option>
-            </select>
-            </div>
-    
-            <div class = "ngModelGroup">
-                <span>Elemental Skill Level</span>
-                <select #level (change)="updateElementalSkill($event)">
-                    <option value="default">-</option>
-                    <option *ngFor="let level of levels" [value]="level">
-                        {{level}}
-                    </option>
-                </select>
-                </div>
-    
-                <div class = "ngModelGroup">
-                    <span>Elemental Burst Level</span>
-                    <select #level (change)="updateElementalBurst($event)">
-                        <option value="default">-</option>
-                        <option *ngFor="let level of levels" [value]="level">
-                            {{level}}
-                        </option>
-                    </select>
-                    </div>
     </form>     
-        <span><button type="submit" (click)="SendData();">Submit</button></span>
+        <span><button type="submit">Submit</button></span>
     </form>
 </mat-tab>
-<mat-tab label= "Talents">
-
-    <mat-button-toggle-group name="reaction">
-      <mat-button-toggle value="none">None</mat-button-toggle>
-      <mat-button-toggle *ngIf="elementFlag === 'Pyro'" value="vaporize">Vaporize</mat-button-toggle>
-      <mat-button-toggle *ngIf="elementFlag === 'Hydro'" value="revvaporize">Reverse Vaporize</mat-button-toggle>
-      <mat-button-toggle *ngIf="elementFlag === 'Pyro'" value="melt">Melt</mat-button-toggle>
-      <mat-button-toggle *ngIf="elementFlag === 'Cryo'" value="revmelt">Reverse Melt</mat-button-toggle>   
-    </mat-button-toggle-group>
-    <br>
-
-    <div class="transformative">
-        <mat-card id="overload" *ngIf="elementFlag === 'Pyro'|| elementFlag ==='Electro'" value="overload">Overload</mat-card>
-        <mat-card id="shatter" value="shatter">Shatter</mat-card>
-        <mat-card id="electroCharged" *ngIf="elementFlag === 'Hydro' || elementFlag ==='Electro'" value="electrocharged">Electro-Charged</mat-card>
-        <mat-card id="swirl" *ngIf="elementFlag === 'Anemo'" value="swirl">Swirl</mat-card>
-        <mat-card id="superconduct" *ngIf="elementFlag === 'Cryo'|| elementFlag ==='Electro'" value="superconduct">Superconduct</mat-card>
-        <mat-card id="crystallize" *ngIf="elementFlag === 'Geo'" value="crystallize">Crystallize</mat-card>   
-    </div>
-    <br>   
+<mat-tab label= "Talents">  
 <span>
-    <app-result-display [damage] = "damage" [ability] = "ability"></app-result-display>
+    <app-result-display></app-result-display>
 </span>
 </mat-tab>
 </mat-tab-group>

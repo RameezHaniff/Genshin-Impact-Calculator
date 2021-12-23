@@ -1,8 +1,126 @@
+<mat-button-toggle-group name="reaction" (change) ="selectReaction($event.value)">
+    <mat-button-toggle value="none" selected>None</mat-button-toggle>
+    <mat-button-toggle *ngIf="elementFlag === 'Pyro'" value="vaporize">Vaporize</mat-button-toggle>
+    <mat-button-toggle *ngIf="elementFlag === 'Hydro'" value="revvaporize">Reverse Vaporize</mat-button-toggle>
+    <mat-button-toggle *ngIf="elementFlag === 'Pyro'" value="melt">Melt</mat-button-toggle>
+    <mat-button-toggle *ngIf="elementFlag === 'Cryo'" value="revmelt">Reverse Melt</mat-button-toggle>   
+    </mat-button-toggle-group>
+    <br>
 
-<mat-card *ngFor="let ability of ability" class="damage">
-    <mat-card-header>{{ability.abilityName}}</mat-card-header>
+<mat-button-toggle-group name="selectDamage" (change) ="selectDamage($event.value)">
+    <mat-button-toggle value="average" selected>Average Damage</mat-button-toggle>
+    <mat-button-toggle value="crit">Crit Damage</mat-button-toggle>
+    <mat-button-toggle value="nonCrit">Non Crit Damage</mat-button-toggle>
+    </mat-button-toggle-group>
+    <br>
+  
+<div class="transformative">
+    <mat-card id="overload" *ngIf="elementFlag === 'Pyro'|| elementFlag ==='Electro'" value="overload">Overload: {{damage.overload}}</mat-card>
+    <mat-card id="shatter" value="shatter">Shatter {{damage.shattered}}</mat-card>
+    <mat-card id="electroCharged" *ngIf="elementFlag === 'Hydro' || elementFlag ==='Electro'" value="electrocharged">Electro-Charged {{damage.electrocharged}}</mat-card>
+    <mat-card id="swirl" *ngIf="elementFlag === 'Anemo'" value="swirl">Swirl {{damage.swirl}}</mat-card>
+    <mat-card id="superconduct" *ngIf="elementFlag === 'Cryo'|| elementFlag ==='Electro'" value="superconduct">Superconduct {{damage.superconduct}}</mat-card>
+    <mat-card id="crystallize" *ngIf="elementFlag === 'Geo'" value="crystallize">Crystallize {{damage.overload}}</mat-card>   
+</div>
+<br> 
+
+<mat-card class="ability1">
+
+    <mat-card-header>{{ability[0]?.abilityName}}</mat-card-header>
+    <br>
+    <mat-card-content>
+        <div class = "ngModelGroup">
+            <!-- <mat-label class="label">Normal Attack Level</mat-label> -->
+            <mat-select #level class="selector"  (selectionChange)="updateNormalAttack($event.value)" placeholder="Talent Level 1">
+                <mat-option *ngFor="let level of levels" [value]="level"> Talent Level
+                    {{level}}
+                </mat-option>
+            </mat-select>
+            <br>
+            </div>
+        <table mat-table #ability1 [dataSource]="skill1Data">
+
+            <ng-container matColumnDef="instanceName">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef = "let instance">{{instance.instanceName}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef ="damageValue">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef = "let damage">{{damage.damageValue| number:'1.2-2'}}</td>
+            </ng-container>
+
+            <!-- <tr mat-header-row *matHeaderRowDef ="displayedColumns"></tr> -->
+            <tr mat-row *matRowDef = " let row; columns: displayedColumns;"></tr>
+
+        </table>
+    </mat-card-content>
 </mat-card>
 
-<label for="Text">Average Damage</label>
-<textarea id="Text" rows= "1" col="10" value= {{damage.average_damage}} readonly  ></textarea>
-<br>
+
+<mat-card class="ability2">
+
+    <mat-card-header>{{ability[1]?.abilityName}}</mat-card-header>
+    <br>
+    <mat-card-content>
+        <div class = "ngModelGroup">
+            <!-- <mat-label class="label">Elemental Skill Level</mat-label> -->
+            <mat-select #level class="selector" (selectionChange)="updateElementalSkill($event.value)" placeholder="Talent Level 1">
+                <mat-option *ngFor="let level of levels" [value]="level"> Talent Level
+                    {{level}}
+                </mat-option>
+            </mat-select>
+            <br>
+            </div>
+        <table mat-table #ability2 [dataSource]="skill2Data">
+
+            <ng-container matColumnDef="instanceName">
+                <th mat-header-cell *matHeaderCellDef>  </th>
+                <td mat-cell *matCellDef = "let instance">{{instance.instanceName}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef ="damageValue">
+                <th mat-header-cell *matHeaderCellDef>  </th>
+                <td mat-cell *matCellDef = "let damage">{{damage.damageValue |number:'1.2-2'}}</td>
+            </ng-container>
+
+            <!-- <tr mat-header-row *matHeaderRowDef ="displayedColumns"></tr> -->
+            <tr mat-row *matRowDef = " let row; columns: displayedColumns;"></tr>
+
+        </table>
+    </mat-card-content>
+</mat-card>
+
+
+<mat-card class="ability3">
+
+    <mat-card-header>{{ability[2]?.abilityName}}</mat-card-header>
+    <br>
+    <mat-card-content>
+        <div class = "ngModelGroup">
+            <!-- <mat-label class="label">Elemental Burst Level</mat-label> -->
+            <mat-select #level class="selector" (selectionChange)="updateElementalBurst($event.value)" placeholder="Talent Level 1">
+                <mat-option *ngFor="let level of levels" [value]="level"> Talent Level
+                    {{level}}
+                </mat-option>
+            </mat-select>
+            <br>
+            </div>
+        <table mat-table #ability3 [dataSource]="skill3Data">
+
+            <ng-container matColumnDef="instanceName">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef = "let instance">{{instance.instanceName}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef ="damageValue">
+                <th mat-header-cell *matHeaderCellDef>  </th>
+                <td mat-cell *matCellDef = "let damage">{{damage.damageValue | number:'1.2-2'}}</td>
+            </ng-container>
+
+            <!-- <tr mat-header-row *matHeaderRowDef ="displayedColumns"></tr> -->
+            <tr mat-row *matRowDef = " let row; columns: displayedColumns;"></tr>
+
+        </table>
+    </mat-card-content>
+</mat-card>

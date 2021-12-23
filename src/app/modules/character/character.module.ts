@@ -14,6 +14,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import {CharacterState} from 'src/app/modules/character/state/character.state';
+import {MatTableModule} from '@angular/material/table';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import {CharacterState} from 'src/app/modules/character/state/character.state';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatGridListModule,
+    MatTableModule,
     MatCardModule,
+    MatSelectModule,
     HttpClientModule,
     FormsModule,
     MatTabsModule,
