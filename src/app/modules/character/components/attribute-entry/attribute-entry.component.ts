@@ -1,26 +1,52 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, HostBinding, Input, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CharacterEntryData } from '../../models/character-data-entry.model';
 import { EnemyData } from '../../models/enemy-data-entry.model';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { EntryData } from '../../models/entry-data.model';
-import { Store } from '@ngxs/store';
-import { SetEntryData } from '../../actions/character.actions';
-
+import { Select, Store } from '@ngxs/store';
+import { GetCharacterInfo, SetEntryData } from '../../actions/character.actions';
+import { ElementRef } from '@angular/core';
+import { Observable } from 'rxjs';
+import { CharacterInfo } from '../../models/character-data.model';
+import { CharacterState } from '../../state/character.state';
+import { CharacterResponse } from '../../models/character-data-response.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-attribute-entry',
   templateUrl: './attribute-entry.component.html',
   styleUrls: ['./attribute-entry.component.scss']
 })
-export class AttributeEntryComponent implements OnInit {
+export class AttributeEntryComponent implements OnInit, AfterViewInit {
 
-    constructor(  private _store : Store) {
+    constructor(  private _store : Store, private route: ActivatedRoute,) {
 
      }
+
+charName = '';
+charElement = '';
+charWeapon = '';
+charRarity = '';
   
+@Input() charId : number = 0;
+@Select(CharacterState.GetCharacterInfo) charInfo$: Observable<CharacterInfo> | undefined;
+@Select(CharacterState.GetCharacter) character$: Observable<CharacterResponse> | undefined;
+
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.charId = params['id'];
+    });
+
+    this._store.dispatch(new GetCharacterInfo(this.charId)).pipe().subscribe(x => {
+      this.generateCharInfo()
+    })
+
+  }
+
+  ngAfterViewInit() :void{
+
   }
 
 
@@ -87,6 +113,14 @@ enemyData : EnemyData = {
   enemyDefReduction: 0
 };
 
+url = '../../../../../assets/amber.png';
+
+updateSidePanel(){
+  this.url = '../../../../../assets/amber.png';
+    
+}
+
+
  onSubmit(charForm : NgForm, enemyForm: NgForm){
   let entryData : EntryData = { characterEntryData : charForm.value, enemyEntryData : enemyForm.value}
   this._store.dispatch(new SetEntryData(entryData))
@@ -98,6 +132,14 @@ GetTab(event : MatTabChangeEvent){
   this.tab = event.tab.textLabel;
 }
 
+generateCharInfo(){
+  this.charInfo$?.pipe().subscribe(x => {
+    this.charName = x.characterName,
+    this.charElement = x.characterElement
+    this.charRarity = x.characterRarity
+    this.charWeapon = x.characterWeapon
+  })
+}
 
 }
 

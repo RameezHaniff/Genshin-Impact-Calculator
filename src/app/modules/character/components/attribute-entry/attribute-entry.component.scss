@@ -1,28 +1,88 @@
+ .background{
+         height: 100%;
+ }
 .tabs{
-        color: white;
-        overflow: hidden;
-        // background-color: rgb(0, 0, 51);
         background-color: black;
-        padding: 16px;
-        margin-top: 2px;
-        transition: all 0.3s ease-in-out;
+        color: black;
+        // overflow: hidden;
+        // // padding: 16px;
+        // // margin-top: 2px;
+        // transition: all 0.3s ease-in-out;
         cursor: pointer;
-        margin: 3px;
-        min-width: 300px;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 90%;
         text-align: center;
+        // margin: 3px;
+        // min-width: 300px;
+        // margin-left: auto;
+        // margin-right: auto;
+        // max-width: 100%;   
 }
 
 .transformative{
         float: left;
 }
 
+.label{
+        float: initial;
+}
+
+
 .damageComp{
         padding: 20px;
 }
 
 
+mat-form-field {
+        width: 200px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+         margin: 0; 
+}
 
 
+.grid-card{
+        background-color: gray;
+        margin: 5px;
+        height: 100%;
+        min-height: 500px;
+}
+
+.grid-card > mat-tab-content{
+        overflow-y: auto;
+}
+
+// .side-card{
+//         background-color: gray;
+//         min-width: 21.75rem;
+//         max-width: 21.75rem;
+//         margin: 5px;
+//         height: 500px;
+
+
+
+.container{
+        
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow-x: auto;
+        justify-content: space-around safe;
+        overflow-y: hidden;
+}
+
+::-webkit-scrollbar-thumb{
+background: #a5a5a5;
+border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 10px grey;
+        border-radius: 8px;
+}
+
+.statForm{
+        display: flex;
+        flex-direction: row;
+}

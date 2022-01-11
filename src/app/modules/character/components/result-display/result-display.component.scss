@@ -1,22 +1,10 @@
 
-html *
-{
-   font-size: 1em !important;
-   color: #000 !important;
-   font-family: Verdana, Geneva, Tahoma, sans-serif !important;
-}
-
-.ability1{
-    text-align: center;
-}
-
-.ability2{
-    text-align: center;
-}
-
-.ability3{
-    text-align: center;
-}
+// html *
+// {
+//    font-size: 1em !important;
+//    color: #000 !important;
+//    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+// }
 
 .label{
         display: block;
@@ -41,25 +29,32 @@ html *
     color: rgb(255, 255, 255);
     // background-color: rgb(30, 120, 200);
     // box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px, rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px;
-    width: 100%;
   }
   
   ng-select {
     width: 200px;
   }
 
+.container{
+        
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    justify-content: space-around safe;
+    overflow-y: hidden;
+    text-align: center;
 
-.ability1{
-    max-width: 30%;
-    float: left;
 }
 
-.ability2{
-    max-width: 30%;
-    float: left;
+
+.grid-card{
+    background-color: gray;
+    margin: 5px;
+    height: 100%;
+    min-height: 500px;
 }
 
-.ability3{
-    max-width: 30%;
-    float: left;
+.table-row{
+    background-color: gray;
 }

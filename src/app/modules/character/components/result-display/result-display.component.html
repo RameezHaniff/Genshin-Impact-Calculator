@@ -1,3 +1,4 @@
+<div class="background">
 <mat-button-toggle-group name="reaction" (change) ="selectReaction($event.value)">
     <mat-button-toggle value="none" selected>None</mat-button-toggle>
     <mat-button-toggle *ngIf="elementFlag === 'Pyro'" value="vaporize">Vaporize</mat-button-toggle>
@@ -23,8 +24,9 @@
     <mat-card id="crystallize" *ngIf="elementFlag === 'Geo'" value="crystallize">Crystallize {{damage.overload}}</mat-card>   
 </div>
 <br> 
-
-<mat-card class="ability1">
+<div class="container">
+    
+<mat-card class="grid-card">
 
     <mat-card-header>{{ability[0]?.abilityName}}</mat-card-header>
     <br>
@@ -38,7 +40,7 @@
             </mat-select>
             <br>
             </div>
-        <table mat-table #ability1 [dataSource]="skill1Data">
+        <table class="table-row" mat-table #ability1 [dataSource]="skill1Data">
 
             <ng-container matColumnDef="instanceName">
                 <th mat-header-cell *matHeaderCellDef></th>
@@ -58,7 +60,7 @@
 </mat-card>
 
 
-<mat-card class="ability2">
+<mat-card class="grid-card">
 
     <mat-card-header>{{ability[1]?.abilityName}}</mat-card-header>
     <br>
@@ -72,7 +74,7 @@
             </mat-select>
             <br>
             </div>
-        <table mat-table #ability2 [dataSource]="skill2Data">
+        <table class="table-row" mat-table #ability2 [dataSource]="skill2Data">
 
             <ng-container matColumnDef="instanceName">
                 <th mat-header-cell *matHeaderCellDef>  </th>
@@ -92,7 +94,7 @@
 </mat-card>
 
 
-<mat-card class="ability3">
+<mat-card class="grid-card">
 
     <mat-card-header>{{ability[2]?.abilityName}}</mat-card-header>
     <br>
@@ -106,7 +108,7 @@
             </mat-select>
             <br>
             </div>
-        <table mat-table #ability3 [dataSource]="skill3Data">
+        <table class="table-row" mat-table #ability3 [dataSource]="skill3Data">
 
             <ng-container matColumnDef="instanceName">
                 <th mat-header-cell *matHeaderCellDef> </th>
@@ -124,3 +126,6 @@
         </table>
     </mat-card-content>
 </mat-card>
+
+</div>
+</div>

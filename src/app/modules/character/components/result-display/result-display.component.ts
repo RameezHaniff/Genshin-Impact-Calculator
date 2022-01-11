@@ -129,7 +129,7 @@ constructor(
         this.calculateStuff()
       }
      })
-    this._store.dispatch([new GetCharacterInfo(this.charId), new GetCharacter(this.charRequest)]).pipe().subscribe(x => {
+    this._store.dispatch( new GetCharacter(this.charRequest)).pipe().subscribe(x => {
       this.character$?.pipe().subscribe(character => { 
 
           this.ability = [];
@@ -513,9 +513,6 @@ constructor(
             let value = this.skillDamage.normalAttack[index]
             x.damageValue = this.skillDamage.elementalBurst[index]
           })
-      
-      console.log(this.skillDamage.normalAttack)    
-      console.log(this.skill1Data)
 
       this.table1.renderRows()
       this.table2.renderRows()
