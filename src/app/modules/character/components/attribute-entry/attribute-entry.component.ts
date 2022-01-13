@@ -12,13 +12,14 @@ import { CharacterInfo } from '../../models/character-data.model';
 import { CharacterState } from '../../state/character.state';
 import { CharacterResponse } from '../../models/character-data-response.model';
 import { ActivatedRoute } from '@angular/router';
+import { MatFormFieldAppearance, MatFormFieldDefaultOptions } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-attribute-entry',
   templateUrl: './attribute-entry.component.html',
   styleUrls: ['./attribute-entry.component.scss']
 })
-export class AttributeEntryComponent implements OnInit, AfterViewInit {
+export class AttributeEntryComponent implements OnInit {
 
     constructor(  private _store : Store, private route: ActivatedRoute,) {
 
@@ -41,13 +42,11 @@ charRarity = '';
 
     this._store.dispatch(new GetCharacterInfo(this.charId)).pipe().subscribe(x => {
       this.generateCharInfo()
+      this.updateSidePanel()
     })
 
   }
 
-  ngAfterViewInit() :void{
-
-  }
 
 
 charEntryData : CharacterEntryData = {
@@ -113,11 +112,12 @@ enemyData : EnemyData = {
   enemyDefReduction: 0
 };
 
-url = '../../../../../assets/amber.png';
+url = '';
+appearance : MatFormFieldAppearance = "outline"
+
 
 updateSidePanel(){
-  this.url = '../../../../../assets/amber.png';
-    
+  this.url = '../../../../../assets/' + this.charName.toLowerCase() + '.png'
 }
 
 

@@ -25,7 +25,7 @@ export class DamageResponse{
         this.superconduct = 0;
         this.electrocharged = 0;
         this.shattered = 0;
-        this.swirl = 0;      
+        this.swirl = 0;  
     }
 
 }

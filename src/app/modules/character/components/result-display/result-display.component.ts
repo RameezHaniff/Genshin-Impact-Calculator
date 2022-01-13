@@ -320,6 +320,7 @@ constructor(
       resmult = (( this.enemyData.enemyPhysicalDmgRes /100) - (this.charEntryData.extraStats.resistanceShred /100));
       resmult = this.resistanceCalc(resmult);
       this.damage.shattered = 3 * transformative * (1 + emBonus + reactDmgBonus);
+      console.log(this.damage.shattered)
 
       if (this.elementFlag === "Cryo" || this.elementFlag === "Electro") {
 

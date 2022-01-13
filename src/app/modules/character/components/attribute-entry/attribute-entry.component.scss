@@ -1,5 +1,7 @@
  .background{
          height: 100%;
+         display: flex;
+         flex-direction: column;
  }
 .tabs{
         background-color: black;
@@ -17,22 +19,21 @@
         // max-width: 100%;   
 }
 
-.transformative{
-        float: left;
+
+mat-label{
+        font-size: 20px;
+
 }
 
-.label{
-        float: initial;
+.char-entry-form{
+        width: 200px;
+        align-content: flex-start;
+
 }
 
 
 .damageComp{
         padding: 20px;
-}
-
-
-mat-form-field {
-        width: 200px;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -43,14 +44,19 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 .grid-card{
-        background-color: gray;
         margin: 5px;
         height: 100%;
         min-height: 500px;
+        min-width: 250px;
+        text-align: left;
 }
 
 .grid-card > mat-tab-content{
         overflow-y: auto;
+}
+
+.grid-card-content{
+
 }
 
 // .side-card{
@@ -60,6 +66,12 @@ input[type=number]::-webkit-outer-spin-button {
 //         margin: 5px;
 //         height: 500px;
 
+.home-icon{
+       color: white;
+       background-color: black;
+       box-shadow: 0px;
+
+}
 
 
 .container{
@@ -85,4 +97,10 @@ border-radius: 8px;
 .statForm{
         display: flex;
         flex-direction: row;
+
+}
+
+.page-container{
+       background-color: black;
+       height: 100%;
 }
