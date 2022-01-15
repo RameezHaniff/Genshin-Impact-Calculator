@@ -32,65 +32,66 @@
                             <mat-card-title>Character Main Stats</mat-card-title>
     
                             <mat-card-content class="grid-card-content">
-                
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            
+                                <input type="number">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Total Hp</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="totalHp" [ngModel]="charEntryData.totalHp" >
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="totalHp" [ngModel]="charEntryData.totalHp" placeholder="0">
                             </mat-form-field>
                             <br>
                             
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Total Attack</mat-label>
-                                <input matInput type="number" name="totalAttack" [ngModel]="charEntryData.totalAttack" >
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="totalAttack" [ngModel]="charEntryData.totalAttack" placeholder="0">
                             </mat-form-field>
                             <br>
                     
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Base Attack</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="baseAttack" [ngModel]="charEntryData.baseAttack" >
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="baseAttack" [ngModel]="charEntryData.baseAttack" placeholder="0">
                             </mat-form-field>
                             <br>
                         
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Total Defense</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="totalDefense" [ngModel]="charEntryData.totalDefense" >
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="totalDefense" [ngModel]="charEntryData.totalDefense" placeholder="0">
                             </mat-form-field>
                             <br>
                     
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Elemental Mastery</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="elementalMastery" [ngModel]="charEntryData.elementalMastery" >
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="elementalMastery" [ngModel]="charEntryData.elementalMastery" placeholder="0">
                             </mat-form-field>
                             <br>
                         
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Crit Rate</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="critRate" [ngModel]="charEntryData.critRate" >
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="critRate" [ngModel]="charEntryData.critRate" placeholder="0">
                             </mat-form-field>
                             <br>
                         
                             
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Crit Damage</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="critDamage" [ngModel]="charEntryData.critDamage" >
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="critDamage" [ngModel]="charEntryData.critDamage" placeholder="0">
                             </mat-form-field>
                             <br>
                         
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Energy Recharge</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="energyRecharge" [ngModel]="charEntryData.energyRecharge" >
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="energyRecharge" [ngModel]="charEntryData.energyRecharge" placeholder="0">
                             </mat-form-field>
                             <br>
                         
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Healing Bonus</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="healingBonus" [ngModel]="charEntryData.healingBonus">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="healingBonus" [ngModel]="charEntryData.healingBonus" placeholder="0">
                             </mat-form-field>
                             <br>
                     
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Character Level</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="characterLevel" [ngModel]="charEntryData.characterLevel">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="characterLevel" [ngModel]="charEntryData.characterLevel" placeholder="0">
                             </mat-form-field>
                             <br>
                             </mat-card-content>
@@ -100,9 +101,9 @@
                                 <mat-card class="grid-card">
                                 <mat-card-title>Elemental Bonuses</mat-card-title>
 
-                                <mat-form-field class="char-entry-form" [appearance]="appearance">
+                                <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                     <mat-label>Physical Damage Bonus</mat-label>
-                                    <input knifeNoCopyPaste matInput type="number" name="physicalDmgBonus" [ngModel]="charEntryData.extraStats.physicalDmgBonus">
+                                    <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="physicalDmgBonus" [ngModel]="charEntryData.extraStats.physicalDmgBonus" placeholder="0">
                                 </mat-form-field>
                                 <br>
                             
@@ -111,9 +112,9 @@
                                     <input knifeNoCopyPaste matInput type="number" name="physicalDmgRes" [ngModel]="charEntryData.extraStats.physicalDmgRes">
                                 </mat-form-field> -->
                             
-                                <mat-form-field class="char-entry-form" [appearance]="appearance">
+                                <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                     <mat-label>Anemo Damage Bonus</mat-label>
-                                    <input knifeNoCopyPaste matInput type="number" name="anemoDmgBonus" [ngModel]="charEntryData.extraStats.anemoDmgBonus">
+                                    <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="anemoDmgBonus" [ngModel]="charEntryData.extraStats.anemoDmgBonus" placeholder="0">
                                 </mat-form-field>
                                 <br>
                         
@@ -123,9 +124,9 @@
                                 </mat-form-field>
                                 <br> -->
                             
-                                <mat-form-field class="char-entry-form" [appearance]="appearance">
+                                <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                     <mat-label>Geo Damage Bonus</mat-label>
-                                    <input knifeNoCopyPaste matInput type="number" name="geoDmgBonus" [ngModel]="charEntryData.extraStats.geoDmgBonus">
+                                    <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="geoDmgBonus" [ngModel]="charEntryData.extraStats.geoDmgBonus" placeholder="0">
                                 </mat-form-field>
                                 <br>
                             
@@ -135,9 +136,9 @@
                                 </mat-form-field>
                                 <br> -->
                             
-                                <mat-form-field class="char-entry-form" [appearance]="appearance">
+                                <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                     <mat-label>Electro Damage Bonus</mat-label>
-                                    <input knifeNoCopyPaste matInput type="number" name="electroDmgBonus" [ngModel]="charEntryData.extraStats.electroDmgBonus">
+                                    <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="electroDmgBonus" [ngModel]="charEntryData.extraStats.electroDmgBonus" placeholder="0">
                                 </mat-form-field>
                                 <br>
                             
@@ -147,9 +148,9 @@
                                 </mat-form-field>
                                 <br> -->
 
-                                <mat-form-field class="char-entry-form" [appearance]="appearance">
+                                <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                     <mat-label>Hydro Damage Bonus</mat-label>
-                                    <input knifeNoCopyPaste matInput type="number" name="hydroDmgBonus" [ngModel]="charEntryData.extraStats.hydroDmgBonus">
+                                    <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="hydroDmgBonus" [ngModel]="charEntryData.extraStats.hydroDmgBonus" placeholder="0">
                                 </mat-form-field>
                                 <br>
                             
@@ -159,9 +160,9 @@
                                 </mat-form-field>
                                 <br> -->
                             
-                                <mat-form-field class="char-entry-form" [appearance]="appearance">
+                                <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                     <mat-label>Pyro Damage Bonus</mat-label>
-                                    <input knifeNoCopyPaste matInput type="number" name="pyroDmgBonus" [ngModel]="charEntryData.extraStats.pyroDmgBonus">
+                                    <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="pyroDmgBonus" [ngModel]="charEntryData.extraStats.pyroDmgBonus" placeholder="0">
                                 </mat-form-field>
                                 <br>
                             
@@ -171,9 +172,9 @@
                                 </mat-form-field>
                                 <br> -->
 
-                                <mat-form-field class="char-entry-form" [appearance]="appearance">
+                                <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                     <mat-label>Cryo Damage Bonus</mat-label>
-                                    <input knifeNoCopyPaste matInput type="number" name="hydroDmgRes" [ngModel]="charEntryData.extraStats.cryoDmgBonus">
+                                    <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="hydroDmgRes" [ngModel]="charEntryData.extraStats.cryoDmgBonus" placeholder="0">
                                 </mat-form-field>
                                 <br>
 
@@ -183,15 +184,15 @@
                                 </mat-form-field>
                                 <br> -->
 
-                                <mat-form-field class="char-entry-form" [appearance]="appearance">
+                                <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                     <mat-label>Resistance Shred</mat-label>
-                                    <input knifeNoCopyPaste matInput type="number" name="resistanceShred" [ngModel]="charEntryData.extraStats.resistanceShred">
+                                    <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="resistanceShred" [ngModel]="charEntryData.extraStats.resistanceShred" placeholder="0">
                                 </mat-form-field>
                                 <br>
 
-                                <mat-form-field class="char-entry-form" [appearance]="appearance">
+                                <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                     <mat-label>Reaction Damage Bonus</mat-label>
-                                    <input knifeNoCopyPaste matInput type="number" name="reactionDamageBonus" [ngModel]="charEntryData.extraStats.reactionDamageBonus">
+                                    <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="reactionDamageBonus" [ngModel]="charEntryData.extraStats.reactionDamageBonus" placeholder="0">
                                 </mat-form-field>
                                 <br>
                                 
@@ -201,15 +202,15 @@
                                 </mat-form-field>
                                 <br> -->
                             
-                                <mat-form-field class="char-entry-form" [appearance]="appearance">
+                                <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                     <mat-label>Incoming Healing Bonus</mat-label>
-                                    <input knifeNoCopyPaste matInput type="number" name="incomingHealingBonus" [ngModel]="charEntryData.extraStats.incomingHealingBonus">
+                                    <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="incomingHealingBonus" [ngModel]="charEntryData.extraStats.incomingHealingBonus" placeholder="0">
                                 </mat-form-field>
                                 <br>
                             
-                                <mat-form-field class="char-entry-form" [appearance]="appearance">
+                                <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                     <mat-label>Shield Strength</mat-label>
-                                    <input knifeNoCopyPaste matInput type="number" name="shieldStrength" [ngModel]="charEntryData.extraStats.shieldStrength">
+                                    <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="shieldStrength" [ngModel]="charEntryData.extraStats.shieldStrength" placeholder="0">
                                 </mat-form-field>
                                 <br>
                             
@@ -228,69 +229,69 @@
                         <mat-card-title>Other Damage Bonuses</mat-card-title>
                         <mat-card-content>
 
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Normal Attack Bonus</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="normalAttackDmgBonus" [ngModel]="charEntryData.otherDmgBonus.normalAttackDmgBonus">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="normalAttackDmgBonus" [ngModel]="charEntryData.otherDmgBonus.normalAttackDmgBonus" placeholder="0">
                             </mat-form-field>
                             <br>
                     
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Normal Attack Crit Rate Bonus</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="normalAttackCritRateBonus" [ngModel]="charEntryData.otherDmgBonus.normalAttackCritRateBonus">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="normalAttackCritRateBonus" [ngModel]="charEntryData.otherDmgBonus.normalAttackCritRateBonus" placeholder="0">
                             </mat-form-field>
                             <br>
                     
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Charged Attack Bonus</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="chargedAttackDmgBonus" [ngModel]="charEntryData.otherDmgBonus.chargedAttackDmgBonus">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="chargedAttackDmgBonus" [ngModel]="charEntryData.otherDmgBonus.chargedAttackDmgBonus" placeholder="0">
                             </mat-form-field>
                             <br>
                     
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Charged Attack Crit Rate Bonus</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="normalAttackDmgBonus" [ngModel]="charEntryData.otherDmgBonus.normalAttackDmgBonus">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="normalAttackDmgBonus" [ngModel]="charEntryData.otherDmgBonus.normalAttackDmgBonus" placeholder="0">
                             </mat-form-field>
                             <br>
 
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Plunge Attack Bonus</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="plungeAttackDmgBonus" [ngModel]="charEntryData.otherDmgBonus.plungeAttackDmgBonus">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="plungeAttackDmgBonus" [ngModel]="charEntryData.otherDmgBonus.plungeAttackDmgBonus" placeholder="0">
                             </mat-form-field>
                             <br>
 
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Plunge Attack Crit Rate Bonus</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="plungeAttackCritRateBonus" [ngModel]="charEntryData.otherDmgBonus.plungeAttackCritRateBonus">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="plungeAttackCritRateBonus" [ngModel]="charEntryData.otherDmgBonus.plungeAttackCritRateBonus" placeholder="0">
                             </mat-form-field>
                             <br>
                     
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Elemental Skill Damage Bonus</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="elementalSkillDmgBonus" [ngModel]="charEntryData.otherDmgBonus.elementalSkillDmgBonus">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="elementalSkillDmgBonus" [ngModel]="charEntryData.otherDmgBonus.elementalSkillDmgBonus" placeholder="0">
                             </mat-form-field>
                             <br>
                     
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Elemental Skill Crit Rate Bonus</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="elementalSkillCritRateBonus" [ngModel]="charEntryData.otherDmgBonus.elementalSkillCritRateBonus">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="elementalSkillCritRateBonus" [ngModel]="charEntryData.otherDmgBonus.elementalSkillCritRateBonus" placeholder="0">
                             </mat-form-field>
                             <br>
 
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Elemental Burst Damage Bonus</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="elementalBurstDmgBonus" [ngModel]="charEntryData.otherDmgBonus.elementalBurstDmgBonus">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="elementalBurstDmgBonus" [ngModel]="charEntryData.otherDmgBonus.elementalBurstDmgBonus" placeholder="0">
                             </mat-form-field>
                             <br>
 
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Elemental Burst Crit Rate Bonus</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="elementalBurstCritRateBonus" [ngModel]="charEntryData.otherDmgBonus.elementalBurstCritRateBonus">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="elementalBurstCritRateBonus" [ngModel]="charEntryData.otherDmgBonus.elementalBurstCritRateBonus" placeholder="0">
                             </mat-form-field>
                             <br>
 
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>All Damage Bonus</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="allDmgBonus" [ngModel]="charEntryData.otherDmgBonus.allDmgBonus">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="allDmgBonus" [ngModel]="charEntryData.otherDmgBonus.allDmgBonus" placeholder="0">
                             </mat-form-field>
                             <br>
                     
@@ -321,57 +322,57 @@
                             <mat-card class="grid-card">
                             <mat-card-title>Enemy Stats</mat-card-title>
 
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Enemy Level</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="enemyLevel" [ngModel]="enemyData.enemyLevel">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="enemyLevel" [ngModel]="enemyData.enemyLevel" placeholder="0">
                             </mat-form-field>
                             <br>
                     
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Enemy Physical Damage Resist</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="enemyPhysicalDmgRes" [ngModel]="enemyData.enemyPhysicalDmgRes">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="enemyPhysicalDmgRes" [ngModel]="enemyData.enemyPhysicalDmgRes" placeholder="0">
                             </mat-form-field>
                             <br>
                     
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Enemy Anemo Damage Resist</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="enemyAnemoDmgRes" [ngModel]="enemyData.enemyAnemoDmgRes">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="enemyAnemoDmgRes" [ngModel]="enemyData.enemyAnemoDmgRes" placeholder="0">
                             </mat-form-field>
                             <br>
                     
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Enemy Geo Damage Resist</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="enemyGeoDmgRes" [ngModel]="enemyData.enemyGeoDmgRes">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="enemyGeoDmgRes" [ngModel]="enemyData.enemyGeoDmgRes" placeholder="0">
                             </mat-form-field>
                             <br>
                     
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Enemy Electro Damage Resist</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="enemyElectroDmgRes" [ngModel]="enemyData.enemyElectroDmgRes">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="enemyElectroDmgRes" [ngModel]="enemyData.enemyElectroDmgRes" placeholder="0">
                             </mat-form-field>
                             <br>
                     
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Enemy Hydro Damage Resist</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="enemyHydroDmgRes" [ngModel]="enemyData.enemyHydroDmgRes">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="enemyHydroDmgRes" [ngModel]="enemyData.enemyHydroDmgRes" placeholder="0">
                             </mat-form-field>
                             <br>
                     
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Enemy Pyro Damage Resist</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="enemyPyroDmgRes" [ngModel]="enemyData.enemyPyroDmgRes">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="enemyPyroDmgRes" [ngModel]="enemyData.enemyPyroDmgRes" placeholder="0">
                             </mat-form-field>
                             <br>
                     
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Enemy Cryo Damage Resist</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="enemyCryoDmgRes" [ngModel]="enemyData.enemyCryoDmgRes">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="enemyCryoDmgRes" [ngModel]="enemyData.enemyCryoDmgRes" placeholder="0">
                             </mat-form-field>
                             <br>
                     
-                            <mat-form-field class="char-entry-form" [appearance]="appearance">
+                            <mat-form-field floatLabel="always" class="char-entry-form" [appearance]="appearance">
                                 <mat-label>Enemy Defense Reduction</mat-label>
-                                <input knifeNoCopyPaste matInput type="number" name="enemyDefReduction" [ngModel]="enemyData.enemyDefReduction">
+                                <input knifeNoCopyPaste knifeOnlyNumbers matInput type="number" name="enemyDefReduction" [ngModel]="enemyData.enemyDefReduction" placeholder="0">
                             </mat-form-field>
                             <br>
                         </mat-card>

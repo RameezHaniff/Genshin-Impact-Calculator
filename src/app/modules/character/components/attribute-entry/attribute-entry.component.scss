@@ -3,32 +3,22 @@
          display: flex;
          flex-direction: column;
  }
+
 .tabs{
         background-color: black;
         color: black;
-        // overflow: hidden;
-        // // padding: 16px;
-        // // margin-top: 2px;
-        // transition: all 0.3s ease-in-out;
         cursor: pointer;
         text-align: center;
-        // margin: 3px;
-        // min-width: 300px;
-        // margin-left: auto;
-        // margin-right: auto;
-        // max-width: 100%;   
 }
 
 
 mat-label{
         font-size: 20px;
-
 }
 
 .char-entry-form{
         width: 200px;
         align-content: flex-start;
-
 }
 
 
@@ -59,18 +49,10 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
-// .side-card{
-//         background-color: gray;
-//         min-width: 21.75rem;
-//         max-width: 21.75rem;
-//         margin: 5px;
-//         height: 500px;
-
 .home-icon{
        color: white;
        background-color: black;
        box-shadow: 0px;
-
 }
 
 
@@ -85,8 +67,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 ::-webkit-scrollbar-thumb{
-background: #a5a5a5;
-border-radius: 8px;
+        background: #a5a5a5;
+        border-radius: 8px;
 }
 
 ::-webkit-scrollbar-track {

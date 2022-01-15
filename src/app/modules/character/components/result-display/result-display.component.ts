@@ -1,13 +1,13 @@
-import { Component, ElementRef, Input, OnInit, AfterViewInit, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import {DamageResponse} from '../../models/damage-response';
 import { CharacterState } from '../../state/character.state';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { Ability, CharacterResponse } from '../../models/character-data-response.model';
 import {CardData} from 'src/app/modules/character/models/card-data.model'
-import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { MatTable } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
-import { GetCharacter, GetCharacterInfo, SetEntryData } from '../../actions/character.actions';
+import { GetCharacter } from '../../actions/character.actions';
 import { CharacterInfo } from '../../models/character-data.model';
 import { first } from 'rxjs/operators';
 import { CharacterDataRequest } from '../../models/character-data-request.model';
@@ -126,7 +126,7 @@ constructor(
       if (x) {
         this.charEntryData = x?.characterEntryData,
         this.enemyData = x?.enemyEntryData
-        this.calculateStuff()
+        this.damageCalculation()
       }
      })
     this._store.dispatch( new GetCharacter(this.charRequest)).pipe().subscribe(x => {
@@ -151,7 +151,7 @@ constructor(
             }   
         })
         this.elementCheck();
-        this.calculateStuff();
+        this.damageCalculation();
         for (let index = 0; index < this.instanceName1.length; index++) {
           this.skill1Data.push({instanceName : this.instanceName1[index] , damageValue: this.skillDamage.normalAttack[index]})
         }
@@ -197,41 +197,35 @@ constructor(
 
  selectReaction(event : any){
    this.reaction = event;
-   this.calculateStuff();
+   this.damageCalculation();
   }
 
   selectedDamage: string ='';
 
   selectDamage(event : any){
     this.selectedDamage = event;
-    this.calculateStuff();
+    this.damageCalculation();
    }
   
 
  updateNormalAttack(event :any){
 
     this.charRequest.normalAttackLevel = +(event)
-    this._store.dispatch(new GetCharacter(this.charRequest)).pipe().subscribe(x => { this.calculateStuff()
+    this._store.dispatch(new GetCharacter(this.charRequest)).pipe().subscribe(x => { this.damageCalculation()
     })
   }
 
   updateElementalSkill(event: any){
     this.charRequest.elementalSkillLevel = +(event);
-    this._store.dispatch(new GetCharacter(this.charRequest)).pipe().subscribe(x => { this.calculateStuff()
+    this._store.dispatch(new GetCharacter(this.charRequest)).pipe().subscribe(x => { this.damageCalculation()
     })
   }
 
   updateElementalBurst(event: any){
     this.charRequest.elementalBurstLevel = +(event);
-    this._store.dispatch(new GetCharacter(this.charRequest)).pipe().subscribe(x => { this.calculateStuff()
+    this._store.dispatch(new GetCharacter(this.charRequest)).pipe().subscribe(x => { this.damageCalculation()
     })
-  }
-  
-
-  SendData(){
-    this.charRequest.characterID = this.charId;
-    this._store.dispatch(new GetCharacter(this.charRequest))
-  }
+  } 
 
   elementFlag: string = '';
   
@@ -253,7 +247,7 @@ constructor(
       return resmult;
   }
   
-  public async calculateStuff(){
+  public async damageCalculation(){
 
       this.skillDamage.normalAttack = [];
       this.skillDamage.elementalSkill = [];

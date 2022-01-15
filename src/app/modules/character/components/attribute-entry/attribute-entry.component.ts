@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, HostBinding, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CharacterEntryData } from '../../models/character-data-entry.model';
 import { EnemyData } from '../../models/enemy-data-entry.model';
@@ -12,7 +12,7 @@ import { CharacterInfo } from '../../models/character-data.model';
 import { CharacterState } from '../../state/character.state';
 import { CharacterResponse } from '../../models/character-data-response.model';
 import { ActivatedRoute } from '@angular/router';
-import { MatFormFieldAppearance, MatFormFieldDefaultOptions } from '@angular/material/form-field';
+import { MatFormFieldAppearance} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-attribute-entry',
@@ -21,7 +21,7 @@ import { MatFormFieldAppearance, MatFormFieldDefaultOptions } from '@angular/mat
 })
 export class AttributeEntryComponent implements OnInit {
 
-    constructor(  private _store : Store, private route: ActivatedRoute,) {
+    constructor(  private _store : Store, private route: ActivatedRoute, private eleRef: ElementRef) {
 
      }
 
@@ -142,4 +142,7 @@ generateCharInfo(){
 }
 
 }
+
+
+
 
