@@ -1,28 +1,88 @@
+ .background{
+         height: 100%;
+         display: flex;
+         flex-direction: column;
+ }
+
 .tabs{
-        color: white;
-        overflow: hidden;
-        // background-color: rgb(0, 0, 51);
         background-color: black;
-        padding: 16px;
-        margin-top: 2px;
-        transition: all 0.3s ease-in-out;
+        color: black;
         cursor: pointer;
-        margin: 3px;
-        min-width: 300px;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 90%;
         text-align: center;
 }
 
-.transformative{
-        float: left;
+
+mat-label{
+        font-size: 20px;
 }
+
+.char-entry-form{
+        width: 200px;
+        align-content: flex-start;
+}
+
 
 .damageComp{
         padding: 20px;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+         margin: 0; 
+}
 
 
+.grid-card{
+        margin: 5px;
+        height: 100%;
+        min-height: 500px;
+        min-width: 300px;
+        text-align: left;
+}
 
+.grid-card > mat-tab-content{
+        overflow-y: auto;
+}
+
+.grid-card-content{
+
+}
+
+.home-icon{
+       color: white;
+       background-color: black;
+       box-shadow: 0px;
+}
+
+
+.container{
+        
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow-x: auto;
+        justify-content: space-around safe;
+        overflow-y: hidden;
+}
+
+::-webkit-scrollbar-thumb{
+        background: #a5a5a5;
+        border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 10px grey;
+        border-radius: 8px;
+}
+
+.statForm{
+        display: flex;
+        flex-direction: row;
+
+}
+
+.page-container{
+       background-color: black;
+       height: 100%;
+}

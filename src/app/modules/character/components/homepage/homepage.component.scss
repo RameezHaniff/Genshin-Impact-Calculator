@@ -1,29 +1,37 @@
 .grid-list {
-        background: linear-gradient(#131313, #0f0f0f);
-        border: 2px solid #3c3c3c;
-        box-shadow: 1px 1px 1px 0px #1c1c1c;
-        overflow: hidden;
-        margin-top: 2px;
-        transition: all 0.3s ease-in-out;
-        cursor: pointer;
-        margin: 3px;
-        min-width: 300px;
-        position: relative;
-        user-select: none;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 50%;
-  }
+    background-color: black;
+    border: 2px solid #3c3c3c;
+    box-shadow: 1px 1px 1px 0px #1c1c1c;
+    margin-top: 2px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    margin: 3px;
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%;
+}
 
 .background{
-    background-color: #0f0f0f;
+    background-color: black;
+    height: 100%;
+    overflow: auto;
+
 }
+.grid-tile{
+    background-color: rgb(39, 39, 39);   
+}
+
 
 .title{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif!important;
 }
 
 .grid-tile:hover{
-    border: 2px solid #3c3c3c;
+    background-color: darkgray;
+}
+
+.home-button{
+    cursor: pointer;
 }
 

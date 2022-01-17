@@ -14,6 +14,7 @@ import { AttributeEntryComponent } from './modules/character/components/attribut
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
+
 @NgModule({
   declarations: [
     AppComponent

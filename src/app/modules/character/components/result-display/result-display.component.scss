@@ -1,0 +1,71 @@
+
+
+.label{
+    display: block;
+    margin-block-start: 2.33em;
+    margin-block-end: 2.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.selector{
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    color: rgb(255, 255, 255);
+  }
+  
+ng-select {
+    width: 200px;
+}
+
+.container{       
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: safe space-around;
+    overflow-y: hidden;
+    text-align: center;
+}
+
+
+
+.grid-card{
+    margin: 5px;
+    height: 100%;
+    min-height: 500px;
+    height: 550px;
+    min-width: 350px;
+}
+
+.mat-column-damageValue {
+    width: 100px;
+    text-align: right;
+    justify-content: flex-end;
+}
+
+.mat-column-instanceName {
+    text-align: left;
+    justify-content: flex-start;
+}
+
+.transformative{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.altreaction{
+    width: 200px;
+}
+
+
+

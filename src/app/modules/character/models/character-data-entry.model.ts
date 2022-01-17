@@ -54,7 +54,6 @@ interface OtherDmgBonus{
     elementalBurstDmgBonus : number;
     elementalBurstCritRateBonus: number;
     allDmgBonus: number;
-    reactionDamageBonus: number;
     movementSpeedBonus: number;
     attackSpeedBonus: number;
     weakspotDmgBonus: number;

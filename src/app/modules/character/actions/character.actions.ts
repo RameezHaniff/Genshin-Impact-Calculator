@@ -2,6 +2,7 @@ import { HttpErrorResponse } from "@angular/common/http";
 import { CharacterDataRequest } from "../models/character-data-request.model";
 import { CharacterResponse } from "../models/character-data-response.model";
 import { CharacterInfo } from "../models/character-data.model";
+import { EntryData } from "../models/entry-data.model";
 
 export class GetCharacter{
     static readonly type = "[Character] GetCharacter"
@@ -37,5 +38,11 @@ export class GetCharacterInfoError{
     static readonly type = "[Character] GetCharacterInfoError"
 
     constructor(public payload : HttpErrorResponse){}
+}
+
+export class SetEntryData {
+    static readonly type = "[Character] SetEntryData"
+
+    constructor(public payload : EntryData){}
 }
 
