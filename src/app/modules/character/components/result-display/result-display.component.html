@@ -1,7 +1,7 @@
 
 <div class="background">
 <mat-button-toggle-group name="reaction" (change) ="selectReaction($event.value)">
-    <mat-button-toggle value="none" selected>None</mat-button-toggle>
+    <mat-button-toggle *ngIf="elementFlag === 'Pyro' || elementFlag ==='Cryo' || elementFlag ==='Hydro'" value="none" selected>None</mat-button-toggle>
     <mat-button-toggle *ngIf="elementFlag === 'Pyro'" value="vaporize">Vaporize</mat-button-toggle>
     <mat-button-toggle *ngIf="elementFlag === 'Hydro'" value="revvaporize">Reverse Vaporize</mat-button-toggle>
     <mat-button-toggle *ngIf="elementFlag === 'Pyro'" value="melt">Melt</mat-button-toggle>
@@ -18,11 +18,11 @@
   
 <div class="transformative">
     <mat-card class="altreaction" id="overload" *ngIf="elementFlag === 'Pyro'|| elementFlag ==='Electro'" value="overload">Overload: {{damage.overload |number:'1.0-0'}}</mat-card>
-    <mat-card class="altreaction" id="shatter" value="shatter">Shatter {{damage.shattered |number:'1.0-0'}}</mat-card>
-    <mat-card class="altreaction" id="electroCharged" *ngIf="elementFlag === 'Hydro' || elementFlag ==='Electro'" value="electrocharged">Electro-Charged {{damage.electrocharged |number:'1.0-0'}}</mat-card>
-    <mat-card class="altreaction" id="swirl" *ngIf="elementFlag === 'Anemo'" value="swirl">Swirl {{damage.swirl |number:'1.0-0'}}</mat-card>
-    <mat-card class="altreaction" id="superconduct" *ngIf="elementFlag === 'Cryo'|| elementFlag ==='Electro'" value="superconduct">Superconduct {{damage.superconduct |number:'1.0-0'}}</mat-card>
-    <mat-card class="altreaction" id="crystallize" *ngIf="elementFlag === 'Geo'" value="crystallize">Crystallize {{damage.overload |number:'1.0-0'}}</mat-card>   
+    <mat-card class="altreaction" id="shatter" value="shatter">Shatter: {{damage.shattered |number:'1.0-0'}}</mat-card>
+    <mat-card class="altreaction" id="electroCharged" *ngIf="elementFlag === 'Hydro' || elementFlag ==='Electro'" value="electrocharged">Electro-Charged: {{damage.electrocharged |number:'1.0-0'}}</mat-card>
+    <mat-card class="altreaction" id="swirl" *ngIf="elementFlag === 'Anemo'" value="swirl">Swirl: {{damage.swirl |number:'1.0-0'}}</mat-card>
+    <mat-card class="altreaction" id="superconduct" *ngIf="elementFlag === 'Cryo'|| elementFlag ==='Electro'" value="superconduct">Superconduct: {{damage.superconduct |number:'1.0-0'}}</mat-card>
+    <mat-card class="altreaction" id="crystallize" *ngIf="elementFlag === 'Geo'" value="crystallize">Crystallize: {{damage.overload |number:'1.0-0'}}</mat-card>   
 </div>
 <br> 
 <div class="container">
