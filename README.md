@@ -2,6 +2,8 @@
 Genshin Damage Calculator is a tool aimed to visualize the damage number dealt by characters in Genshin Impact. This project is built in the angular framework.About Genshin Damage 
 As this is a tool to cater to every character in the game, it is difficult to develop all characters at once. So I have decided to develop character additions in batches of 4. Currently the only available characters are Amber, Barbara, Bennett and Beidou. More additions will be made with each version.
 
+This project is intended to work with the [Genshin Impact API](https://github.com/RameezHaniff/Genshin-Impact-Calculator-Web-API.git) which I have also developed.
+
 # Why this project?
 Although there are several great damage calculators for Genshin Impact online , it is still difficult to use them to build up a character in Genshin Impact . Many people who do not want to consider every possible scenario would prefer a simple damage output based on their current stats. This app focuses on simplicity for the use of casual genshin impact players.
 
